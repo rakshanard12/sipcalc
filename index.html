@@ -1,0 +1,82 @@
+<html>
+    <head><title>radio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        
+      
+      #box{
+         background-color: rgb(186, 195, 149);
+         width: 300px;
+         border: 15px rgb(117, 125, 125);
+         padding: 50px;
+         margin: 20px;
+       }
+       
+    </style>
+
+    </head>
+    <body style="background-color:rgb(177, 225, 201);">
+        <script type="text/javascript">
+            function rad1(){
+             var sel=$('input[name=link]:checked','#fo').val();
+             if(sel=="1"){
+                 window.open('#','_self');
+                 return true;
+             }
+             if(sel=="2"){
+                 window.open('./pg2.html','_self');
+                 return true;
+             }
+             return false;
+            }
+           function fun()
+       {
+            var p=parseFloat(document.getElementById("a").value);
+            var y=parseFloat(document.getElementById("b").value);
+            var r=parseFloat(document.getElementById("c").value);
+            var  n=12*y;
+            var i=r/(100*12);
+            //var i=i1/12;
+            var k= i+1;
+            //alert(k)
+            //alert(n)
+            w=k**n;
+            //alert(w);
+            l=(w-1)/i;
+           // alert(l)
+           // let vari=p*l*k;
+           let vari=p*l*k;
+         //   alert(vari)
+            document.getElementById("demo").innerHTML=vari.toFixed(0);
+            
+        }
+        </script>
+        <form id="fo">
+            <label style="font-size: 30px;text-align: center;"><b style="color:orange;">SIP CALCULATOR</b></label><br>
+        
+        <input type="radio" onclick="rad1()" name="link" value="1">I WANT TO INVEST<br>
+        <input type="radio" onclick="rad1()" name="link" value="2">I KNOW MY GOAL <br>
+        <label for="lname">I wish to invest</label>
+        <input type="text" id="a" style="float: center;margin: 30px"><br>
+        50k
+        <input type="range" id="t3" min="10k" max="1cr">5cr<br><br>
+        <label for="lname">NO.of years</label>                       
+        <input type="text" id="b"  style="float: center;margin: 30px;"><br><br>
+        1
+        <input type="range" id="t4" min="1" max="30">30<br><br>
+        <label for="lname">Expected rate of return</label>
+        <input type="text" id="c"  style="float: center;margin: 30px;"><br><br>
+        8%
+        <input type="range" id="t5" min="8%" max="15%">15%<br><br>
+      <!--<div id="box" style="float:top right;">
+      </div>-->
+   </form>
+   </table>
+   <button onclick="fun()">click</button>
+   <div style="background-color: aliceblue;width:30%;height: 150px;margin-top: 30px;">
+    <div> YOUR FUTURE AMOUNT(in Rs):</div>
+    <div id="demo" style="font-size: xx-large;"></div>
+    </div>
+        </form>
+    </body>
+</html>
